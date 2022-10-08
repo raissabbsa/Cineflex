@@ -1,9 +1,12 @@
+import { Link } from "react-router-dom"
 import styled from "styled-components"
 
 export default function ImagemFilme({img}){
     return(
         <Imagem>
-            <img src={img.posterURL} />
+            <Link to={`/sessoes/${img.id}`}>
+                <img src={img.posterURL} alt=""/>
+            </Link>
         </Imagem>
     )
 }

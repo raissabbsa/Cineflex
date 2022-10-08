@@ -1,42 +1,38 @@
-import axios from "axios";
+import axios from "axios"
 import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
 import styled from "styled-components"
-import ImagemFilme from "./ImagemFilme"
+import RenderHorarios from "./RenderHorarios"
 
-export default function ListaFilmes(){
-    const [imagens, setImagens] = useState([]);
+export default function ListaHorarios(){
+    const [horario, setHorario] = useState([])
+    const {idFilme} = useParams()
 
     useEffect(() => {
-        const URL="https://mock-api.driven.com.br/api/v5/cineflex/movies";
-        const promessa=axios.get(URL);
+        const URL= `https://mock-api.driven.com.br/api/v5/cineflex/movies/${idFilme}/showtimes`
+        const promessa = axios.get(URL)
 
         promessa.then((res) => {
-            setImagens(res.data)
+            setHorario(res.data.days)
+            
         })
+
         promessa.catch((erro) => {
             console.log(erro.response.data)
         })
     },[])
-
     return(
-        <SecaoFimes>
+        <>
             <Topo>
                 <h1>CINEFLEX</h1>
-                <p>Selecione o filme</p>
+                <p>Selecione o horário</p>
             </Topo>
-            <ContainerFilmes>
-                {imagens.map((img) => <ImagemFilme key={img.id} img={img} />)}
-            </ContainerFilmes>
-        </SecaoFimes>
-        
+            <>
+            {horario.map((dias) => <RenderHorarios key={dias.id} dias={dias}/>)}
+            </>
+        </>
     )
 }
-
-const SecaoFimes = styled.div`
-    background-color: #FFFFFF;
-    
-`
-
 const Topo = styled.div`
     width: 100%;
     font-family: 'Roboto', sans-serif;
@@ -58,13 +54,4 @@ const Topo = styled.div`
         font-size: 24px;
         color: #293845;
     }
-`
-
-const ContainerFilmes = styled.div`
-    padding: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    
 `
