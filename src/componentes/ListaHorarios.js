@@ -29,10 +29,10 @@ export default function ListaHorarios(){
             {horario.map((dias) => <RenderHorarios key={dias.id} dias={dias}/>)}
             <Rodape>
                 <div>
-                    <img alt="Filme" src={infos.posterURL} />
+                    <img alt="Filme" src={infos.posterURL} data-identifier="movie-img-preview"/>
                 </div>
                 <div>
-                    <p>{infos.title}</p>
+                    <p data-identifier="movie-and-session-infos-preview">{infos.title}</p>
                 </div>
             </Rodape>
 

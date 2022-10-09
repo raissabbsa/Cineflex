@@ -5,11 +5,11 @@ export default function RenderHorarios({dias}){
     const secoes = dias.showtimes;
     const botoes=[];
     secoes.map((dia) => botoes.push(
-        <Link to={`/assentos/${dia.id}`} key={dia.id} ><button >{dia.name}</button></Link>
+        <Link to={`/assentos/${dia.id}`} key={dia.id} ><button data-identifier="hour-minute-btn" >{dia.name}</button></Link>
     ))
     return (
         <HorarioSemana>
-            <p>{dias.weekday} - {dias.date}</p>
+            <p data-identifier="session-date">{dias.weekday} - {dias.date}</p>
             <BotoesHorarios>
                 {botoes}    
             </BotoesHorarios>

@@ -10,7 +10,7 @@ export default function ListaAssentos({infoCompra, infoUsuario}){
     
     const assentos = [];
     arrayAssentos.forEach((s,i) => {
-        assentos.push(<p key={i}>Assento {s}</p>)
+        assentos.push(<p key={i} data-identifier="seat-infos-reserve-finished">Assento {s}</p>)
     });
 
     function redirecionar(){
@@ -24,14 +24,14 @@ export default function ListaAssentos({infoCompra, infoUsuario}){
             </Cabecalho>
             <Conteudo>
                 <h1>Filme e Sessão</h1>
-                <p>{infoFilme.title}</p>
-                <p>{infoData.date} {infoCompra.name}</p>
+                <p data-identifier="movie-session-infos-reserve-finished">{infoFilme.title}</p>
+                <p data-identifier="movie-session-infos-reserve-finished">{infoData.date} {infoCompra.name}</p>
                 <h1>Ingressos</h1>
                 {assentos}
                 <h1>Comprador</h1>
-                <p>{infoUsuario.nome}</p>
-                <p>{infoUsuario.cpf}</p>
-                <button onClick={redirecionar}>Voltar pra home</button>
+                <p data-identifier="buyer-infos-reserve-finished">{infoUsuario.nome}</p>
+                <p data-identifier="buyer-infos-reserve-finished">{infoUsuario.cpf}</p>
+                <button onClick={redirecionar} data-identifier="back-to-home-btn">Voltar pra home</button>
             </Conteudo>
         </>
     )

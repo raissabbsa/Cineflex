@@ -33,18 +33,20 @@ export default function ListaAssentos({setCompra, setUsuario}){
     return(
         <>
             <Topo texto={"(s) assento(s)"}/>
-            <ContainerAssentos>
-            {assentos.map((cad) => <Assento 
-            key={cad.id} 
-            cad={cad}
-            selecionados={selecionados}
-            setSeleciona={setSeleciona} 
-            />)}
-            </ContainerAssentos>
+            <FileiraAssentos>
+                <ContainerAssentos>
+                {assentos.map((cad) => <Assento 
+                key={cad.id} 
+                cad={cad}
+                selecionados={selecionados}
+                setSeleciona={setSeleciona} 
+                />)}
+                </ContainerAssentos>
+            </FileiraAssentos>
             <Botoes>
-                <button></button>
-                <button></button>
-                <button></button>
+                <button data-identifier="seat-selected-subtitle" ></button>
+                <button data-identifier="seat-available-subtitle"></button>
+                <button data-identifier="seat-unavailable-subtitle"></button>
             </Botoes>
             <Botoes>
                 <p>Selecionado</p>
@@ -54,10 +56,10 @@ export default function ListaAssentos({setCompra, setUsuario}){
             <InfoInputs selecionados={selecionados} setUsuario={setUsuario}/>
             <Rodape>
                 <div>
-                    <img alt="Filme" src={infosMovie.posterURL} />
+                    <img alt="Filme" src={infosMovie.posterURL} data-identifier="movie-img-preview"/>
                 </div>
                 <div>
-                    <p>{infosMovie.title}</p>
+                    <p data-identifier="movie-and-session-infos-preview">{infosMovie.title}</p>
                     <p>{infosDia.weekday} - {infosDia.date}</p>
                 </div>
             </Rodape>
@@ -71,6 +73,7 @@ const ContainerAssentos = styled.div`
     align-items: center;
     flex-wrap: wrap;
     padding: 24px;
+    width: 400px;
     
 `
 const Botoes = styled.div`
@@ -95,4 +98,11 @@ const Botoes = styled.div`
         background-color: #FBE192;
         border: 1px solid #F7C52B;
     }
+`
+
+const FileiraAssentos = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 `

@@ -36,18 +36,18 @@ export default function InfoInputs({selecionados, setUsuario}){
         <Input>
             <form onSubmit={fazerLogin}>
                 <label>Nome do comprador:</label>
-                <input type="text" 
+                <input type="text" data-identifier="buyer-name-input"
                 value={nome} 
                 onChange={e => setNome(e.target.value)} 
                 placeholder="Digite seu nome ..." 
                 required></input>
                 <label>CPF do comprador:</label>
-                <input type ="number" 
+                <input type ="number" data-identifier="buyer-cpf-input"
                 value={cpf} 
                 onChange={e => setCpf(e.target.value)} 
                 placeholder="Digite seu CPF ..." 
                 required></input>
-                <button type="submit">Reservar Assento(s)</button>
+                <button type="submit" data-identifier="reservation-btn">Reservar Assento(s)</button>
             </form>
         </Input>
     )

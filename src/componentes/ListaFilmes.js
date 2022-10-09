@@ -33,7 +33,10 @@ export default function ListaFilmes(){
 
 const SecaoFimes = styled.div`
     background-color: #FFFFFF;
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 `
 
 const ContainerFilmes = styled.div`
@@ -42,5 +45,5 @@ const ContainerFilmes = styled.div`
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    
+    width: 80%;
 `

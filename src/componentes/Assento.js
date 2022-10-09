@@ -47,7 +47,7 @@ export default function Assento({ cad, selecionados, setSeleciona }) {
 
     return (
         <AssentoIndividual cor={cor} corBorda={corBorda}>
-            <button onClick={selecionaAssento}>{cad.name}</button>
+            <button onClick={selecionaAssento} data-identifier="seat">{cad.name}</button>
         </AssentoIndividual>
 
     )
