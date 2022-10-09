@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react"
 import styled from "styled-components"
 import ImagemFilme from "./ImagemFilme"
+import Topo from "../Topo";
 
 export default function ListaFilmes(){
     const [imagens, setImagens] = useState([]);
@@ -20,10 +21,8 @@ export default function ListaFilmes(){
 
     return(
         <SecaoFimes>
-            <Topo>
-                <h1>CINEFLEX</h1>
-                <p>Selecione o filme</p>
-            </Topo>
+            <Topo texto={"filme"}/>
+            
             <ContainerFilmes>
                 {imagens.map((img) => <ImagemFilme key={img.id} img={img} />)}
             </ContainerFilmes>
@@ -35,29 +34,6 @@ export default function ListaFilmes(){
 const SecaoFimes = styled.div`
     background-color: #FFFFFF;
     
-`
-
-const Topo = styled.div`
-    width: 100%;
-    font-family: 'Roboto', sans-serif;
-    h1{
-        background-color: #C3CFD9;
-        height: 67px;
-        color:#E8833A;
-        font-size: 34px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-    }
-    p{
-        height: 110px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 24px;
-        color: #293845;
-    }
 `
 
 const ContainerFilmes = styled.div`
