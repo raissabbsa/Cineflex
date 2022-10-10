@@ -18,7 +18,6 @@ export default function RenderHorarios({dias}){
 }
 
 const HorarioSemana = styled.div`
-    font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
     padding-left: 30px;

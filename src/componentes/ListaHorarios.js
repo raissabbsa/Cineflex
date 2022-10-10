@@ -26,7 +26,7 @@ export default function ListaHorarios(){
     },[])
     return(
         <>  
-            <Topo texto={"horário"}/>
+            <Topo texto={"o horário"}/>
             <ContainerHorarios>
                 {horario.map((dias) => <RenderHorarios key={dias.id} dias={dias}/>)}
             </ContainerHorarios>

@@ -27,6 +27,8 @@ const ResetStyle = createGlobalStyle`
     }
     body {
         line-height: 1;
+        font-family: 'Roboto', sans-serif;
+        box-sizing: border-box;
     }
     ol, ul {
         list-style: none;

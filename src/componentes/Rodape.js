@@ -19,7 +19,6 @@ const Conteudo = styled.div`
     align-items: center;
     padding: 10px;
     div:first-child{
-        box-sizing: border-box;
         height: 89px;
         width: 64px;
         margin-right: 15px;

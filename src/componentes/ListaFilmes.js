@@ -21,7 +21,7 @@ export default function ListaFilmes(){
 
     return(
         <SecaoFimes>
-            <Topo texto={"filme"}/>
+            <Topo texto={" filme"}/>
             
             <ContainerFilmes>
                 {imagens.map((img) => <ImagemFilme key={img.id} img={img} />)}
