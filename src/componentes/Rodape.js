@@ -10,6 +10,10 @@ export default function Assento(props) {
 
 const Conteudo = styled.div`
     background-color: #DFE6ED;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     height: 117px;
     display: flex;
     align-items: center;

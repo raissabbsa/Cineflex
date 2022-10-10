@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom"
 import RenderHorarios from "./RenderHorarios"
 import Topo from "../Topo"
 import Rodape from "./Rodape"
+import styled from "styled-components"
 
 export default function ListaHorarios(){
     const [horario, setHorario] = useState([])
@@ -24,9 +25,11 @@ export default function ListaHorarios(){
         })
     },[])
     return(
-        <>
+        <>  
             <Topo texto={"horário"}/>
-            {horario.map((dias) => <RenderHorarios key={dias.id} dias={dias}/>)}
+            <ContainerHorarios>
+                {horario.map((dias) => <RenderHorarios key={dias.id} dias={dias}/>)}
+            </ContainerHorarios>
             <Rodape>
                 <div>
                     <img alt="Filme" src={infos.posterURL} data-identifier="movie-img-preview"/>
@@ -39,3 +42,7 @@ export default function ListaHorarios(){
         </>
     )
 }
+
+const ContainerHorarios = styled.div`
+    margin-bottom: 170px;
+`

@@ -46,4 +46,5 @@ const ContainerFilmes = styled.div`
     justify-content: space-between;
     flex-wrap: wrap;
     width: 80%;
+    
 `

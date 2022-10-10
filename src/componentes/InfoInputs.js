@@ -54,6 +54,7 @@ export default function InfoInputs({selecionados, setUsuario}){
 }
 
 const Input = styled.div`
+    margin-bottom: 120px;
     form{
         padding: 24px;
         display: flex;
